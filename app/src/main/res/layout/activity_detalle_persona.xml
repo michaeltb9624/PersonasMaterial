@@ -29,11 +29,11 @@
 
         fab:menu_showShadow="true">
 
-        <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_eliminar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_delete"
+            app:fab_label="@string/eliminar"
             fab:fab_label="Menu item 1"
             fab:fab_size="mini" />
 
@@ -55,8 +55,8 @@
         <ImageView
             android:id="@+id/imgFotoDetalle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_height="150dp"
+            tools:srcCompat="@android:drawable/ic_menu_gallery" />
 
         <TableLayout
             android:id="@+id/tblTablaDetalle"
@@ -96,7 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="TextView"
+                    android:text="@string/nombre"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

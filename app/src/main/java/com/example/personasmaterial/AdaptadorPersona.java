@@ -17,9 +17,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class AdaptadorPersona extends RecyclerView.Adapter<AdaptadorPersona.PersonaViewHolder> {
 
     private ArrayList<Persona>  personas;
+    public OnPersonaClickListener clickListener;
 
-    public AdaptadorPersona(ArrayList<Persona> personas) {
+    public AdaptadorPersona(ArrayList<Persona> personas , OnPersonaClickListener clickListener) {
         this.personas = personas;
+        this.clickListener = clickListener;
     }
 
     @Override
@@ -35,6 +37,12 @@ public class AdaptadorPersona extends RecyclerView.Adapter<AdaptadorPersona.Pers
         holder.cedula.setText(p.getCedula());
         holder.nombre.setText(p.getNombre());
         holder.apellido.setText(p.getApellido());
+        holder.v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickListener.onPersonaClick(p);
+            }
+        });
     }
 
     @Override
@@ -57,5 +65,9 @@ public class AdaptadorPersona extends RecyclerView.Adapter<AdaptadorPersona.Pers
             nombre = v.findViewById(R.id.lblNombreItem);
             apellido = v.findViewById(R.id.lblApellidoItem);
         }
+    }
+
+    public interface OnPersonaClickListener{
+        void onPersonaClick(Persona p);
     }
 }

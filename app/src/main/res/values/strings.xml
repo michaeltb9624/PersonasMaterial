@@ -16,4 +16,5 @@
     <string name="limpiar">Limpiar</string>
     <string name="detalle_personas">DETALLE PERSONAS</string>
     <string name="cedula">Cédula</string>
+    <string name="eliminar">Eliminar</string>
 </resources>

@@ -29,11 +29,13 @@
 
         fab:menu_showShadow="true">
 
+        <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_eliminar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="eliminar"
+
             android:src="@android:drawable/ic_menu_delete"
-            app:fab_label="@string/eliminar"
             fab:fab_label="Menu item 1"
             fab:fab_size="mini" />
 

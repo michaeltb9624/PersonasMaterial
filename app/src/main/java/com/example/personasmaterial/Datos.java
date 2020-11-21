@@ -2,6 +2,8 @@ package com.example.personasmaterial;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -13,12 +15,10 @@ public class Datos {
 
     public static ArrayList<Persona> personas = new ArrayList<>();
 
+    private static StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+
     public static String getId(){
         return  databaseReference.push().getKey();
-    }
-
-    public static ArrayList<Persona> obtener() {
-        return personas;
     }
 
     public static void setPersonas(ArrayList<Persona> personas) {
@@ -29,6 +29,11 @@ public class Datos {
         databaseReference.child(bd).child(p.getId()).setValue(p);
     }
 
+
+    public static void eliminar(Persona p){
+        databaseReference.child(bd).child(p.getId()).removeValue();
+        storageReference.child(p.getId()).delete();
+    }
 
 }
 

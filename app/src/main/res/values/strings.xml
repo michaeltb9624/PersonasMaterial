@@ -14,4 +14,6 @@
     <string name="nombre">Nombre</string>
     <string name="guardar">Guardar</string>
     <string name="limpiar">Limpiar</string>
+    <string name="detalle_personas">DETALLE PERSONAS</string>
+    <string name="cedula">Cédula</string>
 </resources>
